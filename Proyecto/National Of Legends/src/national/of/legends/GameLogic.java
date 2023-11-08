@@ -5,20 +5,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 /**
- * clase GameLogic
+ * Clase GameLogic
  * @author Julieth
  */
 public class GameLogic {
-
     private final Store store;
     private final Coins coins;
     private List<Cards> playerCards;
-    private List<Cards> aiPlayerCards; // Cartas de la IA
+    private List<Cards> aiPlayerCards;
     private Scanner scanner;
 
     public GameLogic() {
@@ -28,9 +23,7 @@ public class GameLogic {
         this.aiPlayerCards = createInitialAICards();
         this.scanner = new Scanner(System.in);
     }
-/**
- * metodo para inniciar el juego
- */
+
     public void startGame() {
         while (true) {
             System.out.println("Bienvenido al juego.");
@@ -39,8 +32,8 @@ public class GameLogic {
 
             System.out.println("Tus cartas:");
             for (int i = 0; i < playerCards.size(); i++) {
-                System.out.println((i + 1) + ". " + 
-                        playerCards.get(i).getNombre());
+                System.out.println((i + 1) +
+                        ". " + playerCards.get(i).getNombre());
             }
 
             System.out.println("Opciones:");
@@ -71,9 +64,7 @@ public class GameLogic {
             }
         }
     }
-/**
- * metodo para coemnzar el combate
- */
+
     private void startCombat() {
         while (true) {
             System.out.println("Modo de combate:");
@@ -99,9 +90,7 @@ public class GameLogic {
             }
         }
     }
-/**
- * metodo para jugar contra otro jugador
- */
+
     private void playerVsPlayerCombat() {
         System.out.println("Combate Jugador vs. Jugador");
 
@@ -132,9 +121,7 @@ public class GameLogic {
             System.out.println("El combate ha terminado.");
         }
     }
-/**
- * metodo para jugar contra la ia
- */
+
     private void playerVsIACombat() {
         System.out.println("Combate Jugador vs. IA");
 
@@ -208,7 +195,8 @@ public class GameLogic {
         int option;
         while (true) {
             try {
-                option = Integer.parseInt(scanner.nextLine());
+                String input = scanner.nextLine();
+                option = Integer.parseInt(input);
                 if (option >= 1) {
                     return option;
                 } else {
@@ -220,15 +208,11 @@ public class GameLogic {
             }
         }
     }
-/**
- * metodo para finalizar la partida
- */
+
     private void endGame() {
         System.out.println("Juego terminado. ¡Gracias por jugar!");
     }
-/**
- * metodo para ver las cartas en inventario
- */
+
     private void viewInventory() {
         System.out.println("Inventario de cartas:");
         for (int i = 0; i < playerCards.size(); i++) {
@@ -245,9 +229,7 @@ public class GameLogic {
                     + "carta válida.");
         }
     }
-/**
- * metodo para ver catas en la tienda
- */
+
     private void visitStore() {
         System.out.println("¡Bienvenido a la tienda!");
         store.displayItems();
@@ -280,4 +262,3 @@ public class GameLogic {
         game.startGame();
     }
 }
-
