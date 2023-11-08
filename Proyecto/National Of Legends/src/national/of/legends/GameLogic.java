@@ -171,11 +171,11 @@ public class GameLogic {
 
     private List<Cards> createInitialPlayerCards() {
         List<Cards> initialCards = new ArrayList<>();
-        initialCards.add(new Cards("Carta Inicial 1", 20, 10, "Habilidad 1",
+        initialCards.add(new Cards("Zlatan", 20, 15, "ZAPATAZO",
                 5));
-        initialCards.add(new Cards("Carta Inicial 2", 15, 8, "Habilidad 2", 
+        initialCards.add(new Cards("Maximo meridio", 15, 9, "SPARTAAAA", 
                 3));
-        initialCards.add(new Cards("Carta Inicial 3", 25, 12, "Habilidad 3",
+        initialCards.add(new Cards("Figueres", 25, 17, "SE PERDIO LA PLATA",
                 7));
         return initialCards;
     }
